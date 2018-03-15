@@ -1,0 +1,12 @@
+<tr>
+	<td ><%= product.id %></td>
+	<td><%= product.name %></td>
+	<td><%= product.description %></td>
+	<td>$<%= product.price.round(2) %></td>
+	<td><%= product.quantity %></td>
+	<td><%= product.region %></td>
+	<td><%= link_to "edit", edit_product_path(product) %>
+	<td><%= link_to "delete", product, method: :delete %>
+</td>
+</tr>
+ 

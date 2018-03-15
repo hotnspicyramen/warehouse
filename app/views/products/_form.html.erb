@@ -1,0 +1,20 @@
+<%= form_for(@product) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "24x6", class: 'form-control' %>
+
+  <%= f.label :price %>
+  <%= number_field(:product, :price, in: 0.0..20.0, step: 0.01, class: 'form-control') %>
+
+  <%= f.label :quantity %>
+  <%= number_field(:product, :quantity, in: 0..99, step: 1, class: 'form-control') %>
+
+  <%= f.label :region %>
+  <%= f.number_field :region, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

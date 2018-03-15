@@ -1,11 +1,44 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <section class="user_info">
+    	<%= gravatar_for @user %>
       <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <div>
+      	<%= @user.email %>
+      </div>
+
+      <div>
+      	<%= pluralize(current_user.products.count, "product") %>
+      </div>
+
     </section>
   </aside>
+  <div class="col-md-9">
+    <% if @user.products.any? %>
+      <h3>Products (<%= @user.products.count %>)</h3>
+    <% end %>
+    <%= link_to "New product", add_url, class: "btn btn-lg btn-primary" %>
+    <% if @user.products.any? %>
+      <table class="table table-hover table-striped">
+      	<thead>
+		      <tr class="centered">
+		      	<th>ID</th>
+		        <th>Name</th>
+		        <th>Description</th>
+		        <th>Price</th>
+		        <th>Quantity</th>
+		        <th>Region</th>
+		        <th>Edit</th>
+		        <th>Delete</th>
+		      </tr>
+      	</thead>
+      	<tbody>
+      		<%= render @products %>
+      	</tbody>
+      </table>
+    <% end %>
+  </div>
 </div>

@@ -20,3 +20,19 @@ User.create!(name:  "The Dude",
                password:              password,
                password_confirmation: password)
 end
+
+
+users = User.order(:created_at).take(6)
+50.times do
+  name = Faker::Seinfeld.character
+  description = Faker::Seinfeld.quote
+  price = rand(1.00...100.00)
+  quantity = rand(1..25)
+  region = rand(1..7)
+
+  users.each { |user| user.products.create!(name: name,
+                                            description: description,
+                                            price: price,
+                                            quantity: quantity,
+                                            region: region)}
+end
