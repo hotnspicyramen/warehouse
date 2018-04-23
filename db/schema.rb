@@ -23,6 +23,21 @@ ActiveRecord::Schema.define(version: 20180315050026) do
     t.datetime "updated_at", null: false
     t.index ["user_id", "created_at"], name: "index_products_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end  
+
+  create_table "warehouses", force: :cascade do |t|
+    t.text "name"
+    t.text "description"
+    t.integer "user_id"
+    t.text "address"
+    t.text "manager"
+    t.integer "manager_phone_number"
+    t.text "manager_email"
+    t.integer "region"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_warehouses_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_warehouses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

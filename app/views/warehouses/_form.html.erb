@@ -1,0 +1,26 @@
+<%= form_for(@warehouse) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, size: "24x6", class: 'form-control' %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+
+  <%= f.label :manager %>
+  <%= f.text_field :manager, class: 'form-control' %>
+
+  <%= f.label :manager_email %>
+  <%= f.text_field :manager_email, class: 'form-control' %>
+
+  <%= f.label :manager_phone_number %>
+  <%= f.number_field :manager_phone_number, class: 'form-control' %>
+
+  <%= f.label :region %>
+  <%= f.number_field :region, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

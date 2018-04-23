@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyText
+  user: one
+  address: two
+  manager: washington
+  manager_email: washington@gmail.com
+  manager_phone_number: 5555555555
+  region: 1
+
+two:
+  name: MyText
+  description: MyText
+  user: three
+  address: four
+  manager: washington
+  manager_email: washington@gmail.com
+  manager_phone_number: 8008008888
+  region: 1

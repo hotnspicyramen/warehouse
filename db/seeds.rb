@@ -36,3 +36,22 @@ users = User.order(:created_at).take(6)
                                             quantity: quantity,
                                             region: region)}
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  name = Faker::Seinfeld.character
+  description = Faker::Seinfeld.quote
+  address = Faker::Seinfeld.quote
+  manager = Faker::Seinfeld.character
+  manager_phone_number = rand(0000000000...9999999999)
+  manager_email = Faker::Seinfeld.character 
+  region = rand(1..7)
+
+  users.each { |user| user.warehouses.create!(name: name,
+                                            description: description,
+                                            address: address,
+                                            manager: manager,
+                                            manager_phone_number: manager_phone_number,
+                                            manager_email: manager_email,
+                                            region: region)}
+end

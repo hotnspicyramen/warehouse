@@ -1,0 +1,13 @@
+<tr>
+	<td ><%= warehouse.id %></td>
+	<td><%= warehouse.name %></td>
+	<td><%= warehouse.description %></td>
+	<td>$<%= warehouse.address %></td>
+	<td><%= warehouse.manager %></td>
+	<td><%= warehouse.manager_email %></td>
+	<td><%= warehouse.manager_phone_number %></td>
+	<td><%= warehouse.region %></td>
+	<td><%= link_to "edit", edit_warehouse_path(warehouse) %>
+	<td><%= link_to "delete", warehouse, method: :delete %>
+</td>
+</tr>

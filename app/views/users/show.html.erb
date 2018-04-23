@@ -41,4 +41,30 @@
       </table>
     <% end %>
   </div>
+  
+  <div class="col-md-9">
+    <% if @user.warehouses.any? %>
+      <h3>Warehouses (<%= @user.warehouses.count %>)</h3>
+    <% end %>
+    <%= link_to "New warehouse", add_url, class: "btn btn-lg btn-primary" %>
+    <% if @user.warehouses.any? %>
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr class="centered">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Manager </th>
+            <th>Manager Email</th>
+            <th>Manager Phone Number</th>
+            <th>Region</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @warehouses %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>

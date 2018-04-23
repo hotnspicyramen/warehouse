@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :products, dependent: :destroy
+  has_many :warehouses, dependent: :destroy
 
   attr_accessor :remember_token
 	before_save { email.downcase! }
